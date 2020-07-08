@@ -1,2 +1,3 @@
-# angular_project
-angular test project
+# Тестовое задание
+Приложение на Angular
+
