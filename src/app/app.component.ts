@@ -22,7 +22,7 @@ export class AppComponent {
 
   title: string;
   description: string;
-  price: number = 0;
+  price: number;
 
   items: Item[] =
   [
@@ -32,7 +32,7 @@ export class AppComponent {
   ];
 
   addItem(title: string, price: number, description: string): void {
-    if(title==null && price==null && description==null)
+    if(title==null || price==null || description==null)
       return;
     this.items.push(new Item(title, price, description));
   }
