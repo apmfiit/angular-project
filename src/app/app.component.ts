@@ -36,10 +36,9 @@ export class AppComponent {
       return;
     this.items.push(new Item(title, price, description));
   }
-  deleteItem(item: string): void {
-    const index: number = this.items.indexOf(item);
-    if (index !== -1) {
-      this.items.splice(index, 1);
+  deleteItem(item: string, itemId: number): void {
+    if (itemId !== -1) {
+      this.items.splice(itemId, 1);
     }
 
   }

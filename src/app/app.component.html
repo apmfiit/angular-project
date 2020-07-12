@@ -36,8 +36,7 @@
           <td>{{item.title}}</td>
           <td>{{item.price}}</td>
           <td>{{item.description}}</td>
-          <td>{{itemId}}</td>
-          <button type="button" class="btn btn-danger" (click)="deleteItem(item)">Удалить</button>
+          <button type="button" class="btn btn-danger" (click)="deleteItem(item, itemId)">Удалить</button>
       </tr>
     </tbody>
   </table>
