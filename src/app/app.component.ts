@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 class Item {
-  product: string;
+  title: string;
   price: number;
   description: string;
 
-  constructor(product: string, price: number, description: string) {
+  constructor(title: string, price: number, description: string) {
 
-    this.product = product;
+    this.title = title;
     this.price = price;
     this.description = description;
   }
@@ -26,14 +26,21 @@ export class AppComponent {
 
   items: Item[] =
   [
-    { product: "Хлеб", price: 50, description: 'Белый ЯХК' },
-    { product: "Яйцо", price: 70, description: 'куриное' },
-    { product: "Молоко", price: 60, description: 'обезжиренное' }
+    { title: "Хлеб", price: 50, description: 'Белый ЯХК' },
+    { title: "Яйцо", price: 70, description: 'куриное' },
+    { title: "Молоко", price: 60, description: 'обезжиренное' }
   ];
 
   addItem(title: string, price: number, description: string): void {
     if(title==null || price==null || description==null)
       return;
     this.items.push(new Item(title, price, description));
+  }
+  deleteItem(item: string): void {
+    const index: number = this.items.indexOf(item);
+    if (index !== -1) {
+      this.items.splice(index, 1);
+    }
+
   }
 }
